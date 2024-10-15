@@ -1,0 +1,50 @@
+Microsoft Windows [Version 10.0.22631.4317]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\User>d:
+
+D:\>cd backend
+
+D:\backend>cd give_me_A_joke
+
+D:\backend\give_me_A_joke>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (give_me_a_joke)
+version: (1.0.0)
+description: i am making first nodejs project using npm
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: rishabh
+license: (ISC)
+About to write to D:\backend\give_me_A_joke\package.json:
+
+{
+  "name": "give_me_a_joke",
+  "version": "1.0.0",
+  "description": "i am making first nodejs project using npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rishabh",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+
+
+
+
+// like this we will initialise the file on command prompt or terminal you can say
