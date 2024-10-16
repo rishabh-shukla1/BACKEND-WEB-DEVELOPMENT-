@@ -1,0 +1,26 @@
+h1{
+
+    text-align: center;
+    text-decoration: line-through;
+    color: burlywood;
+
+}
+
+h2{
+    text-align: center;
+    color:red;
+
+}
+
+h4{
+    font-family: 'Times New Roman', Times, serif;
+    color: pink;
+
+}
+
+
+div{
+    width: 300px;
+    height:250px;
+    background-color: aqua;
+}
