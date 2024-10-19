@@ -1,0 +1,890 @@
+ merge confilct 
+ commands 
+
+
+Microsoft Windows [Version 10.0.22631.4317]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\User>cd backend
+The system cannot find the path specified.
+
+C:\Users\User>d:
+
+D:\>cd backend
+
+D:\backend>cd leargit
+The system cannot find the path specified.
+
+D:\backend>cd learngit
+
+D:\backend\learnGit>echo. >file3.txt
+
+D:\backend\learnGit>git show
+commit d6df4dfda2d1ed89af2c0582dc938b22d1d16893 (HEAD -> master)
+Author: Rishabh Shukla <rishabhshukla01032004@gmail.com>
+Date:   Sat Oct 19 09:15:13 2024 +0530
+
+    verison 2
+
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..f0b3e65
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++hello i study in gla university
+
+D:\backend\learnGit>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\learnGit
+
+19-10-2024  10:05    <DIR>          .
+19-10-2024  09:56    <DIR>          ..
+19-10-2024  10:01                36 file.txt
+19-10-2024  09:28                34 file2.txt
+19-10-2024  10:06                19 file3.txt
+               3 File(s)             89 bytes
+               2 Dir(s)  504,194,895,872 bytes free
+
+D:\backend\learnGit>git add .
+
+D:\backend\learnGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file3.txt
+
+
+D:\backend\learnGit>git commit -m"file3 commit for new features"
+[master b3fbd1c] file3 commit for new features
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file3.txt
+
+D:\backend\learnGit>git branch
+* master
+  new_feature
+
+D:\backend\learnGit>git checkout new_feature
+Switched to branch 'new_feature'
+
+D:\backend\learnGit>git branch
+  master
+* new_feature
+
+D:\backend\learnGit>git checkout master
+Switched to branch 'master'
+
+D:\backend\learnGit>git branch
+* master
+  new_feature
+
+D:\backend\learnGit>git merge new_features
+merge: new_features - not something we can merge
+
+D:\backend\learnGit>git merge new_feature
+Auto-merging file3.txt
+CONFLICT (add/add): Merge conflict in file3.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+D:\backend\learnGit>git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   file.txt
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      file3.txt
+
+
+D:\backend\learnGit>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\learnGit
+
+19-10-2024  10:17    <DIR>          .
+19-10-2024  09:56    <DIR>          ..
+19-10-2024  10:17             2,216 file.txt
+19-10-2024  09:28                34 file2.txt
+19-10-2024  10:17                82 file3.txt
+               3 File(s)          2,332 bytes
+               2 Dir(s)  504,194,891,776 bytes free
+
+D:\backend\learnGit>git branch -d new_feature
+error: the branch 'new_feature' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D new_feature'
+hint: Disable this message with "git config advice.forceDeleteBranch false"
+
+D:\backend\learnGit>git branch -D new_feature
+Deleted branch new_feature (was 83e923b).
+
+D:\backend\learnGit>git show
+commit b3fbd1cb5b51f6e84cdfe45b668c63dbb87e7952 (HEAD -> master)
+Author: Rishabh Shukla <rishabhshukla01032004@gmail.com>
+Date:   Sat Oct 19 10:07:41 2024 +0530
+
+    file3 commit for new features
+
+diff --git a/file3.txt b/file3.txt
+new file mode 100644
+index 0000000..b84cbab
+--- /dev/null
++++ b/file3.txt
+@@ -0,0 +1,2 @@
++
++you are in file3
+\ No newline at end of file
+
+D:\backend\learnGit>git branch
+* master
+
+D:\backend\learnGit>git checkout -b latest
+Switched to a new branch 'latest'
+
+D:\backend\learnGit>git status
+On branch latest
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+        modified:   file3.txt
+
+
+D:\backend\learnGit>git branch
+* latest
+  master
+
+D:\backend\learnGit>git chechout master
+git: 'chechout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+D:\backend\learnGit>git checkout master
+M       file.txt
+M       file3.txt
+Switched to branch 'master'
+
+D:\backend\learnGit>git branch
+  latest
+* master
+
+D:\backend\learnGit>echo. > file4.txt
+
+D:\backend\learnGit>git checkout latest
+M       file.txt
+M       file3.txt
+Switched to branch 'latest'
+
+D:\backend\learnGit>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\learnGit
+
+19-10-2024  10:34    <DIR>          .
+19-10-2024  09:56    <DIR>          ..
+19-10-2024  10:17             2,216 file.txt
+19-10-2024  09:28                34 file2.txt
+19-10-2024  10:20                 0 file3.txt
+19-10-2024  10:35                23 file4.txt
+               4 File(s)          2,273 bytes
+               2 Dir(s)  504,194,891,776 bytes free
+
+D:\backend\learnGit>cd..
+
+D:\backend>gitlearn
+'gitlearn' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\backend>cd gitlearn
+
+D:\backend\gitlearn>git init
+Initialized empty Git repository in D:/backend/gitlearn/.git/
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  10:43    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:42                 0 file1.txt
+19-10-2024  10:42                 0 file2.txt
+19-10-2024  10:43                 0 file3.txt
+               3 File(s)              0 bytes
+               2 Dir(s)  504,194,838,528 bytes free
+
+D:\backend\gitlearn>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+        file3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  10:44    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  504,194,838,528 bytes free
+
+D:\backend\gitlearn>file1.txt
+'file1.txt' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\backend\gitlearn>echo. >file1.txt
+
+D:\backend\gitlearn>git commit -m "version1"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m "version1"
+[master (root-commit) 6eda87c] version1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+D:\backend\gitlearn>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  10:44    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+               1 File(s)             30 bytes
+               2 Dir(s)  504,194,834,432 bytes free
+
+D:\backend\gitlearn>echo. >file2.txt
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m "version2"
+[master fc1c1ea] version2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+
+D:\backend\gitlearn>echo. >file3.txt
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m "version3"
+[master ffd7d27] version3
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 file3.txt
+
+D:\backend\gitlearn>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\backend\gitlearn>git checkout new_features
+error: pathspec 'new_features' did not match any file(s) known to git
+
+D:\backend\gitlearn>git branch  new features
+fatal: not a valid object name: 'features'
+
+D:\backend\gitlearn>git branch  new_features
+
+D:\backend\gitlearn>git log
+commit ffd7d27f50c285eed9f6ca95fd4bee9115c751ce (HEAD -> master, new_features)
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:47:13 2024 +0530
+
+    version3
+
+commit fc1c1ea9f388f9328646563bf8a4af8781781f35
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:46:31 2024 +0530
+
+    version2
+
+commit 6eda87c7b33bde839391989d2d63ff5768c52b78
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:45:50 2024 +0530
+
+    version1
+
+D:\backend\gitlearn>git branch
+* master
+  new_features
+
+D:\backend\gitlearn>git checkout new_features
+M       file3.txt
+Switched to branch 'new_features'
+
+D:\backend\gitlearn>git status
+On branch new_features
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\backend\gitlearn>git checkout master
+M       file3.txt
+Switched to branch 'master'
+
+D:\backend\gitlearn>git commit -m"version 3"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m"version 3"
+[master b304ae3] version 3
+ 1 file changed, 1 insertion(+)
+
+D:\backend\gitlearn>status
+'status' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\backend\gitlearn>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\backend\gitlearn>git merge new_feature
+merge: new_feature - not something we can merge
+
+D:\backend\gitlearn>git checkout new_featute
+error: pathspec 'new_featute' did not match any file(s) known to git
+
+D:\backend\gitlearn>git checkout new_feature
+error: pathspec 'new_feature' did not match any file(s) known to git
+
+D:\backend\gitlearn>git branch
+* master
+  new_features
+
+D:\backend\gitlearn>git checkout new_features
+Switched to branch 'new_features'
+
+D:\backend\gitlearn>git branch
+  master
+* new_features
+
+D:\backend\gitlearn>git merge new_features
+Already up to date.
+
+D:\backend\gitlearn>git delete -d new_features
+git: 'delete' is not a git command. See 'git --help'.
+
+D:\backend\gitlearn>git branch -D new_features
+error: cannot delete branch 'new_features' used by worktree at 'D:/backend/gitlearn'
+
+D:\backend\gitlearn>git branch -d new_features
+error: cannot delete branch 'new_features' used by worktree at 'D:/backend/gitlearn'
+
+D:\backend\gitlearn>git checkout master
+Switched to branch 'master'
+
+D:\backend\gitlearn>git branch -d new_features
+Deleted branch new_features (was ffd7d27).
+
+D:\backend\gitlearn>git branch
+* master
+
+D:\backend\gitlearn>git branch latest
+
+D:\backend\gitlearn>git branch
+  latest
+* master
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  11:01    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+19-10-2024  10:46                29 file2.txt
+19-10-2024  11:01                31 file3.txt
+               3 File(s)             90 bytes
+               2 Dir(s)  504,194,830,336 bytes free
+
+D:\backend\gitlearn>git checkout latest
+Switched to branch 'latest'
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  11:01    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+19-10-2024  10:46                29 file2.txt
+19-10-2024  11:01                31 file3.txt
+               3 File(s)             90 bytes
+               2 Dir(s)  504,194,830,336 bytes free
+
+D:\backend\gitlearn>git checkout master
+Switched to branch 'master'
+
+D:\backend\gitlearn>echo. > file4.txt
+
+D:\backend\gitlearn>git  branch
+  latest
+* master
+
+D:\backend\gitlearn>git branch -d latest
+Deleted branch latest (was b304ae3).
+
+D:\backend\gitlearn>git  branch
+* master
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  11:10    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+19-10-2024  10:46                29 file2.txt
+19-10-2024  11:01                31 file3.txt
+19-10-2024  11:10                23 file4.txt
+               4 File(s)            113 bytes
+               2 Dir(s)  504,194,830,336 bytes free
+
+D:\backend\gitlearn>git checkout -b latest
+Switched to a new branch 'latest'
+
+D:\backend\gitlearn>git status
+On branch latest
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m "version 4"
+[latest 951e3ff] version 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4.txt
+
+D:\backend\gitlearn>git status
+On branch latest
+nothing to commit, working tree clean
+
+D:\backend\gitlearn>git branch
+* latest
+  master
+
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>git status
+On branch latest
+nothing to commit, working tree clean
+
+D:\backend\gitlearn>git branch
+* latest
+  master
+
+D:\backend\gitlearn>git checkout master
+Switched to branch 'master'
+
+D:\backend\gitlearn>git branch -d  latest
+error: the branch 'latest' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D latest'
+hint: Disable this message with "git config advice.forceDeleteBranch false"
+
+D:\backend\gitlearn>git brach -D latest
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+D:\backend\gitlearn>git branch -D latest
+Deleted branch latest (was 951e3ff).
+
+D:\backend\gitlearn>echno. > file4.txt
+'echno.' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\backend\gitlearn>echo. > file4.txt
+
+D:\backend\gitlearn>git branch -b latest
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
+   or: git branch [<options>] [-l] [<pattern>...]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --[no-]verbose    show hash and subject, give twice for upstream branch
+    -q, --[no-]quiet      suppress informational messages
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --[no-]set-upstream-to <upstream>
+                          change the upstream info
+    --[no-]unset-upstream unset the upstream info
+    --[no-]color[=<when>] use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --[no-]delete     delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --[no-]move       move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    --[no-]omit-empty     do not output a newline after empty formatted refs
+    -c, --[no-]copy       copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --[no-]list       list branch names
+    --[no-]show-current   show current branch name
+    --[no-]create-reflog  create the branch's reflog
+    --[no-]edit-description
+                          edit the description for the branch
+    -f, --[no-]force      force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --[no-]column[=<style>]
+                          list branches in columns
+    --[no-]sort <key>     field name to sort on
+    --[no-]points-at <object>
+                          print only branches of the object
+    -i, --[no-]ignore-case
+                          sorting and filtering are case insensitive
+    --[no-]recurse-submodules
+                          recurse through submodules
+    --[no-]format <format>
+                          format to use for the output
+
+
+D:\backend\gitlearn>git branch
+* master
+
+D:\backend\gitlearn>git branch -b latest
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
+   or: git branch [<options>] [-l] [<pattern>...]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --[no-]verbose    show hash and subject, give twice for upstream branch
+    -q, --[no-]quiet      suppress informational messages
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --[no-]set-upstream-to <upstream>
+                          change the upstream info
+    --[no-]unset-upstream unset the upstream info
+    --[no-]color[=<when>] use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --[no-]delete     delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --[no-]move       move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    --[no-]omit-empty     do not output a newline after empty formatted refs
+    -c, --[no-]copy       copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --[no-]list       list branch names
+    --[no-]show-current   show current branch name
+    --[no-]create-reflog  create the branch's reflog
+    --[no-]edit-description
+                          edit the description for the branch
+    -f, --[no-]force      force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --[no-]column[=<style>]
+                          list branches in columns
+    --[no-]sort <key>     field name to sort on
+    --[no-]points-at <object>
+                          print only branches of the object
+    -i, --[no-]ignore-case
+                          sorting and filtering are case insensitive
+    --[no-]recurse-submodules
+                          recurse through submodules
+    --[no-]format <format>
+                          format to use for the output
+
+
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>
+D:\backend\gitlearn>git branch latest
+
+D:\backend\gitlearn>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m"version 4"
+[master 4bf9df2] version 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4.txt
+
+D:\backend\gitlearn>git  checkout latest
+Switched to branch 'latest'
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  11:21    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+19-10-2024  10:46                29 file2.txt
+19-10-2024  11:01                31 file3.txt
+               3 File(s)             90 bytes
+               2 Dir(s)  504,194,564,096 bytes free
+
+D:\backend\gitlearn>git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+D:\backend\gitlearn>git checkout master
+Switched to branch 'master'
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  11:22    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+19-10-2024  10:46                29 file2.txt
+19-10-2024  11:01                31 file3.txt
+19-10-2024  11:22                 3 file4.txt
+               4 File(s)             93 bytes
+               2 Dir(s)  504,194,564,096 bytes free
+
+D:\backend\gitlearn>git checkout latest
+error: Your local changes to the following files would be overwritten by checkout:
+        file4.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\backend\gitlearn>breanch
+'breanch' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\backend\gitlearn>git branch
+  latest
+* master
+
+D:\backend\gitlearn>git checkout latest
+error: Your local changes to the following files would be overwritten by checkout:
+        file4.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\backend\gitlearn>git checkout latest
+error: Your local changes to the following files would be overwritten by checkout:
+        file4.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\backend\gitlearn>git branch
+  latest
+* master
+
+D:\backend\gitlearn>git checkout latest
+error: Your local changes to the following files would be overwritten by checkout:
+        file4.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\backend\gitlearn>
+D:\backend\gitlearn>status
+'status' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\backend\gitlearn>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file4.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m"version 4"
+[master 36e265f] version 4
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\backend\gitlearn>git checkout latest
+Switched to branch 'latest'
+
+D:\backend\gitlearn>dir
+ Volume in drive D is Data
+ Volume Serial Number is D6FD-FA8A
+
+ Directory of D:\backend\gitlearn
+
+19-10-2024  11:27    <DIR>          .
+19-10-2024  10:41    <DIR>          ..
+19-10-2024  10:45                30 file1.txt
+19-10-2024  10:46                29 file2.txt
+19-10-2024  11:01                31 file3.txt
+               3 File(s)             90 bytes
+               2 Dir(s)  504,194,564,096 bytes free
+
+D:\backend\gitlearn>echo. >file4.txt
+
+D:\backend\gitlearn>git status
+On branch latest
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\backend\gitlearn>git add .
+
+D:\backend\gitlearn>git commit -m" branch new commit file 4"
+[latest 9836b61]  branch new commit file 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4.txt
+
+D:\backend\gitlearn>git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+D:\backend\gitlearn>git checkout master
+Switched to branch 'master'
+
+D:\backend\gitlearn>git merge latest
+Auto-merging file4.txt
+CONFLICT (add/add): Merge conflict in file4.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+D:\backend\gitlearn> git add .
+
+D:\backend\gitlearn>git commit -m"git conflict resolved"
+[master 0b9d142] git conflict resolved
+
+D:\backend\gitlearn>git log
+commit 0b9d142b1eb6818f5a351abf8c06417fb6124eed (HEAD -> master)
+Merge: 36e265f 9836b61
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 11:36:32 2024 +0530
+
+    git conflict resolved
+
+commit 9836b6101370fd4f224f2b41f74be1df8f8cadae (latest)
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 11:29:10 2024 +0530
+
+     branch new commit file 4
+
+commit 36e265fe872f2935f599ec3fe2d4b0b23af10387
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 11:27:20 2024 +0530
+
+    version 4
+
+commit 4bf9df25a3a9eb7987753043bdfa0bc840d98b67
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 11:20:44 2024 +0530
+
+    version 4
+
+commit b304ae30dc6000ad7ccb130cb7bfe2d4e6e5a207
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:51:13 2024 +0530
+
+    version 3
+
+commit ffd7d27f50c285eed9f6ca95fd4bee9115c751ce
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:47:13 2024 +0530
+
+    version3
+
+commit fc1c1ea9f388f9328646563bf8a4af8781781f35
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:46:31 2024 +0530
+
+    version2
+
+commit 6eda87c7b33bde839391989d2d63ff5768c52b78
+Author: “Rishabh <“rishabhshukla01032004@gmail.com”>
+Date:   Sat Oct 19 10:45:50 2024 +0530
+
+    version1
+(END)
